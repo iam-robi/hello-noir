@@ -620,20 +620,19 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@noir-lang/aztec_backend@0.11.0", "@noir-lang/aztec_backend@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@noir-lang/aztec_backend/-/aztec_backend-0.11.0.tgz#c07d3ed8e388c32aa560c6239d296de32c2b78f4"
-  integrity sha512-gJIdSOeUClJGGt7j1cTD0skd3UjO4eeg1OSjQyj36NNf9A68PDnvCen/uT2aQncCVanREUUXxP586voxElWRYA==
+"@noir-lang/aztec_backend@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@noir-lang/aztec_backend/-/aztec_backend-0.12.0.tgz#008cd47634b3e73a06c2197be7eb538a3f7eb41c"
+  integrity sha512-X6Pa+qt/rroVwT1V4zPzKDEDU39jPXRhIKog3N6qaAdlF/V1Xsk/FPTPS6r7+3tjVhTquX0lDCRaxqSCdx/oqw==
 
-"@noir-lang/barretenberg@^2.19.0":
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/@noir-lang/barretenberg/-/barretenberg-2.19.0.tgz#676ef5152dc40e3db20f3269e537ec9abd1f0b37"
-  integrity sha512-AnqebO0HRk6kEFyhTh47VQqUTE+PrG5UuIATjAoCSSkpcoLIX58esouuYoLZbJ+89PCLTXeprJUp+vrlnmyRzQ==
+"@noir-lang/barretenberg@github:noir-lang/barretenberg#39a1547875f941ef6640217a42d8f34972425c97":
+  version "2.19.0-8c75fc36"
+  resolved "https://codeload.github.com/noir-lang/barretenberg/tar.gz/39a1547875f941ef6640217a42d8f34972425c97"
   dependencies:
-    "@noir-lang/aztec_backend" "0.11.0"
     "@types/detect-node" "^2.0.0"
     "@types/levelup" "^4.3.0"
-    buffer-browserify "^0.2.5"
+    buffer "6.0.3"
+    crypto "npm:crypto-browserify@3.12.0"
     debug "^4.1.1"
     detect-node "^2.0.4"
     fs-extra "10.0.0"
@@ -643,13 +642,19 @@
     node-fetch "2.6.1"
     promise-readable "^5.0.4"
     sha3 "^2.1.3"
+    stream "npm:stream-browserify@3.0.0"
     threads "1.7.0"
     tslib "^2.0.0"
 
-"@noir-lang/noir_wasm@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@noir-lang/noir_wasm/-/noir_wasm-0.10.0.tgz#9223c2ab92cf24da7e483c4131179a4d62a59c19"
-  integrity sha512-ZoNlOqjGxf0YDCQP/tmD+2KsCePvjc0xcMiefmNREDyE3rpDCUiLt6B7kaXztFqPxpT7hi8+ARFUx7cZyqqZtg==
+"@noir-lang/noir-source-resolver@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@noir-lang/noir-source-resolver/-/noir-source-resolver-1.1.2.tgz#724f58e095722762e3880ca9e08edc35742e8f05"
+  integrity sha512-GRiAR7z2RxdUt07fL3X303sm3Qs4Ec9lPDCQ5uwK7xDD2nK6KaNBNQyl+JrotCxsMhoh7MVh38SZSOOCxaJgUQ==
+
+"@noir-lang/noir_wasm@^0.4.1-3d2233d":
+  version "0.4.1-3d2233d"
+  resolved "https://registry.yarnpkg.com/@noir-lang/noir_wasm/-/noir_wasm-0.4.1-3d2233d.tgz#48d3830ce7309f91faa5d037be807d2d0cbcfffe"
+  integrity sha512-WJgmxRve3gVwa4Wl2c3aEboRI7oSKMnRZ4mGL3ktp0c2wXli6yhYLpK7NooupllYFfikILHlgEUa+K38V8eBeA==
 
 "@nomicfoundation/ethereumjs-block@5.0.1":
   version "5.0.1"
@@ -2399,11 +2404,6 @@ base-x@^3.0.2, base-x@^3.0.8:
   dependencies:
     safe-buffer "^5.0.1"
 
-base64-js@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
-  integrity sha512-3XSA2cR/h/73EzlXXdU6YNycmYI7+kicTxks4eJg2g39biHR84slg2+des+p7iHYhbRg/udIS4TD53WabcOUkw==
-
 base64-js@^1.3.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
@@ -2656,13 +2656,6 @@ bs58check@^2.1.2:
     bs58 "^4.0.0"
     create-hash "^1.1.0"
     safe-buffer "^5.1.2"
-
-buffer-browserify@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/buffer-browserify/-/buffer-browserify-0.2.5.tgz#29c739d6a4e247b539abc0ada073612002163a21"
-  integrity sha512-3ko6TTBwXb15w2OgZuyAzLJwUFClBMvcKcmhF+iQ79G71K8Fc3RqKzroCN0a0DbZw2GM3q9lNoqfYYCTq6w7QA==
-  dependencies:
-    base64-js "0.0.8"
 
 buffer-from@^1.0.0:
   version "1.1.2"
@@ -3315,7 +3308,7 @@ cross-spawn@^7.0.2:
   resolved "https://registry.yarnpkg.com/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
   integrity sha512-mCxBlsHFYh9C+HVpiEacem8FEBnMXgU9gy4zmNC+SXAZNB/1idgp/aulFJ4FgCi7GPEVbfyng092GqL2k2rmow==
 
-crypto-browserify@3.12.0:
+crypto-browserify@3.12.0, "crypto@npm:crypto-browserify@3.12.0":
   name crypto
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/crypto-browserify/-/crypto-browserify-3.12.0.tgz#396cf9f3137f03e4b8e532c58f698254e00f80ec"
@@ -8242,7 +8235,7 @@ readable-stream@^2.0.0, readable-stream@^2.0.5, readable-stream@^2.2.2, readable
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@^3.0.6, readable-stream@^3.4.0, readable-stream@^3.6.0:
+readable-stream@^3.0.6, readable-stream@^3.4.0, readable-stream@^3.5.0, readable-stream@^3.6.0:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.6.2.tgz#56a9b36ea965c00c5a93ef31eb111a0f11056967"
   integrity sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==
@@ -9136,6 +9129,14 @@ stream-to-pull-stream@^1.7.1:
     looper "^3.0.0"
     pull-stream "^3.2.3"
 
+"stream@npm:stream-browserify@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-3.0.0.tgz#22b0a2850cdf6503e73085da1fc7b7d0c2122f2f"
+  integrity sha512-H73RAHsVBapbim0tU2JwwOiXUj+fikfiaoYAKHF3VJfA0pe2BCzkhAHBlLG6REzE+2WNZcxOXjK7lkso+9euLA==
+  dependencies:
+    inherits "~2.0.4"
+    readable-stream "^3.5.0"
+
 streamsearch@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/streamsearch/-/streamsearch-1.1.0.tgz#404dd1e2247ca94af554e841a8ef0eaa238da764"
@@ -10009,6 +10010,11 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+vite-plugin-wasm@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/vite-plugin-wasm/-/vite-plugin-wasm-3.2.2.tgz#7a66fef27733a0dea9b2b14f942a6389a2523f7c"
+  integrity sha512-cdbBUNR850AEoMd5nvLmnyeq63CSfoP1ctD/L2vLk/5+wsgAPlAVAzUK5nGKWO/jtehNlrSSHLteN+gFQw7VOA==
 
 web3-bzz@1.2.11:
   version "1.2.11"
