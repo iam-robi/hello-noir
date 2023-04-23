@@ -1,6 +1,9 @@
 {
   "name": "hardhat-noir-template",
   "author": "benhooper.eth",
+  "scripts": {
+    "generate-frontend-files": "ts-node scripts/generateFrontendData.ts"
+  },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
     "@nomiclabs/hardhat-etherscan": "^3.1.7",

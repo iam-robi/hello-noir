@@ -10,3 +10,4 @@ artifacts
 
 *.proof
 .DS_Store
+deploy/frontend
